@@ -1,5 +1,5 @@
 
-[![N|Solid](https://www.neonginx.com/200x200.png)](https://www.neonginx.com/)
+[![N|Solid](https://github.com/neonginx/neonginx/raw/master/logo.png)](https://www.neonginx.com/)
 
 [![Build Status](https://travis-ci.com/neonginx/neonginx.svg?branch=master)](https://travis-ci.com/neonginx/neonginx)
 
