@@ -18,3 +18,11 @@ Ubuntu/Debian distro:
 	rm -rf /etc/nginx/ # delete your old nginx folder to initialize nginx correctly
 	./AUTOINSTALL
 Done!
+
+## To do list
+- Data persistence
+- Advanced statistics
+- Basic DDoS Protection
+- Management of nginx's configuration from the dashboard (GUI)
+
+and more..!
