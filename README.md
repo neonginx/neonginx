@@ -14,8 +14,7 @@ Ubuntu/Debian distro:
 
 	git clone https://github.com/neonginx/neonginx
 	cd neonginx
-	cp /etc/nginx/ /root/nginx_folder_backup # backup your nginx folder
-	rm -rf /etc/nginx/ # delete your old nginx folder to initialize nginx correctly
+	cp /etc/nginx/ /root/nginx_folder_backup # backup your nginx folder, for safety purposes
 	./AUTOINSTALL
 Done!
 
