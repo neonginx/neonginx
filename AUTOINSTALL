@@ -1,0 +1,9 @@
+./AUTOCONFIGURE
+make -j
+make install
+echo "Stopping NeoNginx"
+/usr/sbin/nginx -s stop
+echo "Waiting 5 Seconds"
+sleep 5
+echo "Starting NeoNginx"
+/usr/sbin/nginx

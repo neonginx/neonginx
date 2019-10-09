@@ -87,11 +87,6 @@ else
     NGX_MAN=docs/man/nginx.8
 fi
 
-if test -d html ; then
-    NGX_HTML=html
-else
-    NGX_HTML=docs/html
-fi
 
 cat << END                                                    >> $NGX_MAKEFILE
 
@@ -154,8 +149,23 @@ install:	build $NGX_INSTALL_PERL_MODULES
 	test -d '\$(DESTDIR)`dirname "$NGX_HTTP_LOG_PATH"`' \\
 		|| mkdir -p '\$(DESTDIR)`dirname "$NGX_HTTP_LOG_PATH"`'
 
-	test -d '\$(DESTDIR)$NGX_PREFIX/html' \\
-		|| cp -R $NGX_HTML '\$(DESTDIR)$NGX_PREFIX'
+
+	# Custom
+
+	test -d '\$(DESTDIR)$NGX_CONF_PREFIX/conf.d' \\
+		|| mkdir '\$(DESTDIR)$NGX_CONF_PREFIX/conf.d'
+
+	cp conf/neonginx.conf \\
+                '\$(DESTDIR)$NGX_CONF_PREFIX/conf.d/neonginx.conf'
+
+	cp conf/welcome.conf \\
+                '\$(DESTDIR)$NGX_CONF_PREFIX/conf.d/welcome.conf'
+
+	test -d '\$(DESTDIR)$NGX_CONF_PREFIX/neonginx' \
+        || cp -R conf/neonginx '\$(DESTDIR)$NGX_CONF_PREFIX/'
+
+	test -d '/var/cache/nginx' \
+        || mkdir '/var/cache/nginx'
 END
 
 
