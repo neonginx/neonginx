@@ -44,7 +44,7 @@ static void *ngx_http_neonginx_create_mainconf(ngx_conf_t *cf){
 		// Generate a new random password
 		password = generateRandomString(cf->pool, NEONGINX_PASSWORD_LEN + 1);
 		ngx_log_error(NGX_LOG_EMERG, ngx_cycle->log, 0,
-									"NeoNginx: Your new DashBoard root password: %s", password);
+									"NeoNginx: Your new DashBoard root password: %s\nVisit http://your-server-ip:8989/ to login!", password);
 		nmcf->password = hash_djb2(password);
 
 		// Generate a new random salt (used for the session validation)

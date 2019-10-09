@@ -93,7 +93,7 @@ const unsigned int randomNumber(unsigned int min, unsigned int max){
 // Function to get a random string, buffer will be allocated in the given pool
 const char *generateRandomString(ngx_pool_t *pool, unsigned int length){
   char characters[] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRST"
-                      "UVWXYZ!£$()[]-_?@#*+";
+                      "UVWXYZ!$()[]-_?@#*+";
   size_t characters_len = (sizeof(characters)/sizeof(char))-1;
   char *randomString = ngx_pcalloc(pool, (length+1)*sizeof(char));
   for(int i = 0; i < length; i++){
