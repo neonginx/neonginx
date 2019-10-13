@@ -98,6 +98,10 @@ var NeoNginx = {
 																				<td class="text-right">` + NeoNginx.TOOLS.FORMATNUMBER(data.SERVERS[k].REQUESTS_TOTAL) + `</td>
 																				<td class="text-right">` + NeoNginx.TOOLS.FORMATBYTES(data.SERVERS[k].BYTES_IN) + `</td>
 																				<td class="text-right">` + NeoNginx.TOOLS.FORMATBYTES(data.SERVERS[k].BYTES_OUT) + `</td>
+																				<td class="text-right">` + NeoNginx.TOOLS.FORMATNUMBER(data.SERVERS[k].HTTP_20X) + `</td>
+																				<td class="text-right">` + NeoNginx.TOOLS.FORMATNUMBER(data.SERVERS[k].HTTP_30X) + `</td>
+																				<td class="text-right">` + NeoNginx.TOOLS.FORMATNUMBER(data.SERVERS[k].HTTP_40X) + `</td>
+																				<td class="text-right">` + NeoNginx.TOOLS.FORMATNUMBER(data.SERVERS[k].HTTP_50X) + `</td>
 																			</tr>`;
 					}
 					NeoNginx.VAR.RATE_INBOUND = NeoNginx.VAR.TOTAL_INBOUND - NeoNginx.VAR.LTOTAL_INBOUND;

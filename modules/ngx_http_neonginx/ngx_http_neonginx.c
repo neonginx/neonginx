@@ -120,8 +120,34 @@ static ngx_int_t ngx_http_neonginx_preaccess_phase_handler(ngx_http_request_t *r
 static ngx_int_t ngx_http_neonginx_log_phase_handler(ngx_http_request_t *r){
 	ngx_http_neonginx_srv_conf_t  *nscf = ngx_http_get_module_srv_conf(r, ngx_http_neonginx_module);
 	ngx_http_neonginx_main_conf_t *nmcf = ngx_http_get_module_main_conf(r, ngx_http_neonginx_module);
+	
+	// Total Requests
 	ngx_atomic_fetch_add(&nscf->total_requests, 1);
+	
+	// Bandwidth
 	ngx_atomic_fetch_add(&nscf->bytes_out, r->connection->sent);
 	ngx_atomic_fetch_add(&nscf->bytes_in, r->request_length);
+	
+	// HTTP Status Codes
+	switch(r->headers_out.status / 100){
+		case 1:
+			ngx_atomic_fetch_add(&nscf->HTTP_10X, 1);
+			break;
+		case 2:
+			ngx_atomic_fetch_add(&nscf->HTTP_20X, 1);
+			break;
+		case 3:
+			ngx_atomic_fetch_add(&nscf->HTTP_30X, 1);
+			break;
+		case 4:
+			ngx_atomic_fetch_add(&nscf->HTTP_40X, 1);
+			break;
+		case 5:
+			ngx_atomic_fetch_add(&nscf->HTTP_50X, 1);
+			break;
+		default:
+			break;
+	}
+
 	return NGX_DECLINED;
 }

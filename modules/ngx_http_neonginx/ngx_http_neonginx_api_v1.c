@@ -106,6 +106,11 @@ static ngx_int_t ngx_http_neonginx_api_v1_stats(ngx_http_request_t *r, ngx_http_
 			jwObj_int(&jwc, "REQUESTS_TOTAL", nscf->total_requests);
 			jwObj_int(&jwc, "BYTES_IN", nscf->bytes_in);
 			jwObj_int(&jwc, "BYTES_OUT", nscf->bytes_out);
+			jwObj_int(&jwc, "HTTP_10X", nscf->HTTP_10X);
+			jwObj_int(&jwc, "HTTP_20X", nscf->HTTP_20X);
+			jwObj_int(&jwc, "HTTP_30X", nscf->HTTP_30X);
+			jwObj_int(&jwc, "HTTP_40X", nscf->HTTP_40X);
+			jwObj_int(&jwc, "HTTP_50X", nscf->HTTP_50X);
 		jwEnd(&jwc );
 	}
 	jwEnd(&jwc );

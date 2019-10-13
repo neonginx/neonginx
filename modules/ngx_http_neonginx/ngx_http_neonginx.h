@@ -15,6 +15,11 @@ typedef struct {
 	ngx_atomic_t total_requests;
 	ngx_atomic_t bytes_in;
 	ngx_atomic_t bytes_out;
+	ngx_atomic_t HTTP_10X;
+	ngx_atomic_t HTTP_20X;
+	ngx_atomic_t HTTP_30X;
+	ngx_atomic_t HTTP_40X;
+	ngx_atomic_t HTTP_50X;
 	// ngx_shmtx_t  mutex;
 } ngx_http_neonginx_srv_conf_t;
 
