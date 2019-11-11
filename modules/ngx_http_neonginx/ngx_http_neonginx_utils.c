@@ -29,7 +29,9 @@ static ngx_int_t ngx_http_neonginx_print(ngx_http_request_t *r, char *string, ng
     b->memory = 1;
     b->last_buf = 1;
 
-    return ngx_http_output_filter(r, &out);
+    ngx_http_output_filter(r, &out);
+    ngx_http_finalize_request(r, 0);
+    return NGX_DONE;
 }
 
 
