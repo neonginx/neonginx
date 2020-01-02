@@ -8,7 +8,7 @@ NEONGINX is a web server based on the Nginx HTTP server and has many advanced fe
 ## Dependencies
 Ubuntu/Debian distro:
 
-	apt-get install libssl-dev libpcre3 libpcre3-dev zlib1g zlib1g-dev libgeoip-dev libgeoip1 geoip-bin perl libperl-dev libgd3 libgd-dev libxml2 libxml2-dev -y
+	apt-get install make libssl-dev libpcre3 libpcre3-dev zlib1g zlib1g-dev libgeoip-dev libgeoip1 geoip-bin perl libperl-dev libgd3 libgd-dev libxml2 libxml2-dev -y
 
 ## Installation
 
